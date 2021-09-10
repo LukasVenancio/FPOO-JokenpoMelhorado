@@ -13,37 +13,31 @@ public class Jokenpo2 {
 
 		int escolhaJogador;
 		int numeroPartidas = 0;
-		int contador = 1;
 		int placarJogador = 0, placarComputador = 0;
 		int partidaAtual = 1;
 		String jogarNovamente = "S";
 
-		
-
-		while (jogarNovamente.equals("S")) {
+		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim")) {
 			System.out.println("****************************");
 			System.out.println("          JOKENPO");
 			System.out.println("****************************");
 			System.out.println();
 			System.out.print("Número de partidas desejadas:");
 			numeroPartidas = leitor.nextInt();
-			System.out.println("****************************");
-			
-			System.out.println();
-			System.out.println("1-PEDRA");
-			System.out.println("2-PAPEL");
-			System.out.println("3-TESOURA");
-			System.out.println();
-			
+
 			while (numeroPartidas < 3 || numeroPartidas % 2 == 0) {
 				System.out.println("O número de partidas precisa ser ímpar e maior do que 3, para que haja um vencedor!");
-				System.out.println("****************************");
 				System.out.println();
 				System.out.print("Número de partidas desejadas:");
 				numeroPartidas = leitor.nextInt();
 				System.out.println();
 			}
-
+			System.out.println("****************************");
+			System.out.println();
+			System.out.println("1-PEDRA");
+			System.out.println("2-PAPEL");
+			System.out.println("3-TESOURA");
+			System.out.println();
 			while (placarComputador < numeroPartidas / 2 + 1 && placarJogador < numeroPartidas / 2 + 1) {
 
 				int numeroSorteio = sorteio.nextInt(3) + 1;
@@ -106,11 +100,11 @@ public class Jokenpo2 {
 
 			}
 			System.out.println("---------------------------");
-			System.out.println("Deseja jogar novamente?");
+			System.out.println("Deseja jogar novamente? (S/N)");
 			jogarNovamente = leitor.next();
 			System.out.println("---------------------------");
 			System.out.println();
-			
+
 			placarJogador = 0;
 			placarComputador = 0;
 			numeroPartidas = 0;
@@ -118,6 +112,7 @@ public class Jokenpo2 {
 			escolhaJogador = 0;
 		}
 
+		leitor.close();
 	}
 
 }
