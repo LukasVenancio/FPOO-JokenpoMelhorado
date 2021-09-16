@@ -20,9 +20,11 @@ public class Jokenpo2 {
 
 		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim")
 				|| jogarNovamente.equals("Sim")) {
-			System.out.println("*******************************************************************************************************");
+			System.out.println(
+					"*******************************************************************************************************");
 			System.out.println("                                       JOKENPO");
-			System.out.println("*******************************************************************************************************");
+			System.out.println(
+					"*******************************************************************************************************");
 			System.out.println();
 			System.out.print("Em quantas partidas você deseja arriscar a sua vida, humano?");
 			numeroPartidas = leitor.nextInt();
@@ -95,7 +97,6 @@ public class Jokenpo2 {
 
 					} else {
 						System.out.println("EMPATAMOS, grr!");
-
 					}
 				} else {
 					System.out.println("Escolha direito! Esse jogo vale o seu destino!");
@@ -129,6 +130,9 @@ public class Jokenpo2 {
 				jogarNovamente = leitor.next();
 				System.out.println();
 			}
+		}
+		if (jogarNovamente.equals("N") || jogarNovamente.equals("n")) {
+			System.out.println("Adimitimos que foi divertido.");
 		}
 
 	}
