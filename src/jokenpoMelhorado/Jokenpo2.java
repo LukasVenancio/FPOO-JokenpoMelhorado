@@ -17,18 +17,20 @@ public class Jokenpo2 {
 		int partidaAtual = 1;
 		String jogarNovamente = "S";
 
-		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim")) {
+		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim") || jogarNovamente.equals("Sim") ) {
 			System.out.println("****************************");
 			System.out.println("          JOKENPO");
 			System.out.println("****************************");
 			System.out.println();
-			System.out.print("Número de partidas desejadas:");
+			System.out.print("Em quantas partidas você deseja arriscar a sua vida, humano?");
 			numeroPartidas = leitor.nextInt();
 
 			while (numeroPartidas < 3 || numeroPartidas % 2 == 0) {
-				System.out.println("O número de partidas precisa ser ímpar e maior do que 3, para que haja um vencedor!");
+				System.out.println(
+						"Não te ensinaram a contar? O número de partidas precisa ser ímpar e maior do que 3, para que haja um vencedor!");
 				System.out.println();
-				System.out.print("Número de partidas desejadas:");
+				System.out.println("Escolha direito dessa vez!");
+				System.out.print("Em quantas partidas você deseja arriscar a sua vida, humano?");
 				numeroPartidas = leitor.nextInt();
 				System.out.println();
 			}
@@ -44,31 +46,31 @@ public class Jokenpo2 {
 
 				System.out.println("****************************");
 				System.out.println("Partdida: " + partidaAtual);
-				System.out.println("FAÇA SUA ESCOLHA:");
+				System.out.println("Escolha logo, pedaço de carne!");
 				escolhaJogador = leitor.nextInt();
 
 				if (escolhaJogador == 1 || escolhaJogador == 2 || escolhaJogador == 3) {
 
 					// EXIBINDO ESCOLHA DO JOGADOR
 					if (escolhaJogador == 1) {
-						System.out.println("Você escolheu PEDRA!");
+						System.out.println("Você escolheu PEDRA? Só se for a do meu sapato...");
 
 					} else if (escolhaJogador == 2) {
-						System.out.println("Você escolheu PAPEL!");
+						System.out.println("Você escolheu PAPEL, desmatando hein?");
 
 					} else {
-						System.out.println("Você escolheu TESOURA!");
+						System.out.println("Você escolheu TESOURA, só se for uma tesoura cega.");
 					}
 
 					// EXIBINDO ESCOLHA DO COMPUTADOR
 					if (numeroSorteio == 1) {
-						System.out.println("O computador escolheu PEDRA!");
+						System.out.println("As máquinas escolheram PEDRA, vamos esmagar vocês!");
 
 					} else if (numeroSorteio == 2) {
-						System.out.println("O computador escolheu PAPEL!");
+						System.out.println("As máquinas escolheram PAPEL, vamos esfregar esse papel na sua cara!");
 
 					} else {
-						System.out.println("O computador escolheu TESOURA!");
+						System.out.println("As máquinas escolheram TESOURA, vamos picotar você!");
 					}
 					System.out.println();
 
@@ -76,31 +78,31 @@ public class Jokenpo2 {
 					if (escolhaJogador == 1 && numeroSorteio == 3 || escolhaJogador == 2 && numeroSorteio == 1
 							|| escolhaJogador == 3 && numeroSorteio == 2) {
 
-						System.out.println("VOCÊ ganhou!");
+						System.out.println("VOCÊ ganhou, mas será apenas desta vez!");
 						placarJogador++;
 
 					} else if (numeroSorteio == 1 && escolhaJogador == 3 || numeroSorteio == 2 && escolhaJogador == 1
 							|| numeroSorteio == 3 && escolhaJogador == 2) {
 
-						System.out.println("O COMPUTADOR ganhou!");
+						System.out.println("As MÁQUINAS venceram, como sempre, hahaha!");
 						placarComputador++;
 
 					} else {
-						System.out.println("EMPATAMOS!");
+						System.out.println("EMPATAMOS, grr!");
 
 					}
 				} else {
-					System.out.println("Você não fez uma escolha válida");
+					System.out.println("Escolha direito! Esse jogo vale o seu destino!");
 				}
 
 				System.out.printf("%d - %d", placarJogador, placarComputador);
 				System.out.println();
 				System.out.println();
 				partidaAtual++;
-
 			}
+
 			System.out.println("---------------------------");
-			System.out.println("Deseja jogar novamente? (S/N)");
+			System.out.println("Hahaha! Quer arrriscar novamente?? (S/N)");
 			jogarNovamente = leitor.next();
 			System.out.println("---------------------------");
 			System.out.println();
@@ -110,9 +112,17 @@ public class Jokenpo2 {
 			numeroPartidas = 0;
 			partidaAtual = 1;
 			escolhaJogador = 0;
+
+			if (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("Sim") || jogarNovamente.equals("sim")) {
+				System.out.println();
+			} else if (jogarNovamente.equals("N") || jogarNovamente.equals("n")) {
+				System.out.println("Adimitimos que foi divertido.");
+			} else {
+				System.out.println("Me responda direito! (S/N)");
+				jogarNovamente = leitor.next();
+				System.out.println();
+			}
 		}
 
-		leitor.close();
 	}
-
 }
