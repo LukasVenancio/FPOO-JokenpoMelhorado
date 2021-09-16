@@ -124,7 +124,7 @@ public class Jokenpo2 {
 					|| jogarNovamente.equals("sim")) {
 				System.out.println();
 			} else if (jogarNovamente.equals("N") || jogarNovamente.equals("n")) {
-				System.out.println("Adimitimos que foi divertido.");
+				
 			} else {
 				System.out.println("Me responda direito! (S/N)");
 				jogarNovamente = leitor.next();
