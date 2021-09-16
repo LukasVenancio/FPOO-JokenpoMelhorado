@@ -16,11 +16,13 @@ public class Jokenpo2 {
 		int placarJogador = 0, placarComputador = 0;
 		int partidaAtual = 1;
 		String jogarNovamente = "S";
+		double valorDaVitoria = 0;
 
-		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim") || jogarNovamente.equals("Sim") ) {
-			System.out.println("****************************");
-			System.out.println("          JOKENPO");
-			System.out.println("****************************");
+		while (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("sim")
+				|| jogarNovamente.equals("Sim")) {
+			System.out.println("*******************************************************************************************************");
+			System.out.println("                                       JOKENPO");
+			System.out.println("*******************************************************************************************************");
 			System.out.println();
 			System.out.print("Em quantas partidas você deseja arriscar a sua vida, humano?");
 			numeroPartidas = leitor.nextInt();
@@ -34,17 +36,21 @@ public class Jokenpo2 {
 				numeroPartidas = leitor.nextInt();
 				System.out.println();
 			}
-			System.out.println("****************************");
+			valorDaVitoria = numeroPartidas / 2 + 1;
 			System.out.println();
+			System.out.println("O valor que precisamos para ganhar é: " + valorDaVitoria);
+			System.out.println();
+			System.out.println("****************************");
 			System.out.println("1-PEDRA");
 			System.out.println("2-PAPEL");
 			System.out.println("3-TESOURA");
-			System.out.println();
+
 			while (placarComputador < numeroPartidas / 2 + 1 && placarJogador < numeroPartidas / 2 + 1) {
 
 				int numeroSorteio = sorteio.nextInt(3) + 1;
 
 				System.out.println("****************************");
+				System.out.println();
 				System.out.println("Partdida: " + partidaAtual);
 				System.out.println("Escolha logo, pedaço de carne!");
 				escolhaJogador = leitor.nextInt();
@@ -113,7 +119,8 @@ public class Jokenpo2 {
 			partidaAtual = 1;
 			escolhaJogador = 0;
 
-			if (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("Sim") || jogarNovamente.equals("sim")) {
+			if (jogarNovamente.equals("S") || jogarNovamente.equals("s") || jogarNovamente.equals("Sim")
+					|| jogarNovamente.equals("sim")) {
 				System.out.println();
 			} else if (jogarNovamente.equals("N") || jogarNovamente.equals("n")) {
 				System.out.println("Adimitimos que foi divertido.");
